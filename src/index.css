@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  
+  --color-brand-yellow: #FACC15;
+  --color-brand-black: #111827;
+}
+
+@layer base {
+  body {
+    @apply bg-zinc-50 text-zinc-900 font-sans;
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
+  }
+  
+  .heading-xl {
+    @apply font-display text-4xl md:text-6xl font-bold tracking-tight uppercase leading-none;
+  }
+  
+  .heading-lg {
+    @apply font-display text-3xl md:text-5xl font-bold tracking-tight uppercase;
+  }
+  
+  .heading-md {
+    @apply font-display text-xl md:text-2xl font-bold tracking-tight uppercase;
+  }
+
+  .btn-primary {
+    @apply bg-brand-yellow text-brand-black font-display font-bold px-8 py-4 rounded-none hover:bg-brand-black hover:text-brand-yellow transition-all duration-300 uppercase tracking-wider text-sm;
+  }
+
+  .btn-outline {
+    @apply border-2 border-brand-black text-brand-black font-display font-bold px-8 py-4 rounded-none hover:bg-brand-black hover:text-white transition-all duration-300 uppercase tracking-wider text-sm;
+  }
+}
