@@ -62,15 +62,15 @@ export default function App() {
   ];
 
   const projects = [
-    { id: 'p-1', title: "Sistemas Fotovoltaicos", client: "Energía Solar", img: "/WhatsApp Image 2026-05-04 at 19.16.41 (1).jpeg" },
-    { id: 'p-2', title: "Instalación de Paneles", client: "Proyectos Renovables", img: "/WhatsApp Image 2026-05-04 at 19.16.41 (2).jpeg" },
-    { id: 'p-3', title: "Tableros de Control", client: "Mantenimiento Industrial", img: "/WhatsApp Image 2026-05-04 at 19.16.42 (3) - copia.jpeg" },
-    { id: 'p-4', title: "Distribución Eléctrica", client: "Instalaciones Comerciales", img: "/WhatsApp Image 2026-05-04 at 19.16.42 (4).jpeg" },
-    { id: 'p-5', title: "Conexiones de Precisión", client: "Seguridad y Normativa", img: "/WhatsApp Image 2026-05-04 at 19.16.42.jpeg" },
-    { id: 'p-6', title: "Cuadros de Protección", client: "Residencial", img: "/WhatsApp Image 2026-05-04 at 19.16.43 (4) - copia - copia.jpeg" },
-    { id: 'p-7', title: "Mantenimiento Preventivo", client: "Tableros", img: "/WhatsApp Image 2026-05-04 at 19.16.42 (2).jpeg" },
-    { id: 'p-8', title: "Optimización Energética", client: "Residencial", img: "/WhatsApp Image 2026-05-04 at 19.16.42 (2) - copia.jpeg" },
-    { id: 'p-9', title: "Instalaciones Especiales", client: "Industrial", img: "/WhatsApp Image 2026-05-04 at 19.16.43 - copia - copia.jpeg" }
+    { id: 'p-1', title: "Sistemas Fotovoltaicos", client: "Energía Solar", img: "/project1.jpg" },
+    { id: 'p-2', title: "Instalación de Paneles", client: "Proyectos Renovables", img: "/project2.jpg" },
+    { id: 'p-3', title: "Tableros de Control", client: "Mantenimiento Industrial", img: "/project3.jpg" },
+    { id: 'p-4', title: "Distribución Eléctrica", client: "Instalaciones Comerciales", img: "/project4.jpg" },
+    { id: 'p-5', title: "Conexiones de Precisión", client: "Seguridad y Normativa", img: "/project5.jpg" },
+    { id: 'p-6', title: "Cuadros de Protección", client: "Residencial", img: "/project6.jpg" },
+    { id: 'p-7', title: "Mantenimiento Preventivo", client: "Tableros", img: "/project7.jpg" },
+    { id: 'p-8', title: "Optimización Energética", client: "Residencial", img: "/project8.jpg" },
+    { id: 'p-9', title: "Instalaciones Especiales", client: "Industrial", img: "/project9.jpg" }
   ];
 
   const stats = [
@@ -121,7 +121,7 @@ export default function App() {
       <section className="relative h-screen flex items-center pt-20 overflow-hidden bg-brand-black">
         <div className="absolute inset-0 z-0 scale-110">
           <img 
-            src="/WhatsApp Image 2026-05-04 at 19.16.41.jpeg" 
+            src="/hero.jpg" 
             alt="Electrician Background" 
             className="w-full h-full object-cover opacity-40 grayscale"
             referrerPolicy="no-referrer"
@@ -160,7 +160,7 @@ export default function App() {
             <div className="relative">
               <div className="absolute -inset-4 border-2 border-brand-yellow/30 translate-x-4 translate-y-4" />
               <img 
-                src="/WhatsApp Image 2026-05-04 at 19.16.43 (1).jpeg" 
+                src="/jim-work.jpg" 
                 alt="Jim at work" 
                 className="w-[450px] grayscale hover:grayscale-0 transition-all duration-700 relative z-10 shadow-2xl border-b-8 border-brand-yellow"
                 referrerPolicy="no-referrer"
@@ -194,7 +194,7 @@ export default function App() {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="relative order-2 md:order-1">
             <img 
-              src="/WhatsApp Image 2026-05-04 at 19.16.43 (2).jpeg" 
+              src="/about-work.jpg" 
               alt="Jim's Work" 
               className="w-full grayscale shadow-xl border-4 border-brand-yellow/20"
               referrerPolicy="no-referrer"
@@ -319,7 +319,7 @@ export default function App() {
             </div>
             <div className="relative h-[500px]">
               <img 
-                src="/WhatsApp Image 2026-05-04 at 19.16.42 (1).jpeg" 
+                src="/tools.jpg" 
                 alt="Electrician Tools" 
                 className="w-full h-full object-cover grayscale opacity-60"
                 referrerPolicy="no-referrer"
