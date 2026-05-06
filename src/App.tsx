@@ -27,39 +27,53 @@ export default function App() {
       id: 'ser-1',
       title: "Instalaciones Eléctricas",
       desc: "Instalación completa de circuitos, tableros y sistemas residenciales o comerciales.",
-      icon: <Zap className="w-8 h-8" />
+      icon: <Zap className="w-8 h-8" />,
+      img: "/assets/project6.jpg",
+      notes: "Especialidad en montajes de cuadros de distribución (QGD), cumplimiento de normativa RETIE, y sistemas de puesta a tierra certificados. Utilizamos conductores de cobre electrolítico y protecciones termo-magnéticas de alta gama."
     },
     {
       id: 'ser-2',
       title: "Mantenimiento Preventivo",
       desc: "Inspecciones técnicas para evitar fallas futuras y optimizar el consumo energético.",
-      icon: <ShieldCheck className="w-8 h-8" />
+      icon: <ShieldCheck className="w-8 h-8" />,
+      img: "/assets/project7.jpg",
+      notes: "Incluye termografía infrarroja para detectar puntos calientes, reapriete de conexiones, limpieza de tableros y balanceo de cargas para reducir el desperdicio de energía."
     },
     {
       id: 'ser-3',
       title: "Reparaciones de Emergencia",
       desc: "Servicio rápido para cortocircuitos, fallas de fase y apagones inesperados.",
-      icon: <Truck className="w-8 h-8" />
+      icon: <Truck className="w-8 h-8" />,
+      img: "/assets/about-work.jpg",
+      notes: "Diagnóstico avanzado con multímetros digitales de precisión. Detección de fugas a tierra y corrección inmediata de cortocircuitos en redes monofásicas, bifásicas y trifásicas."
     },
     {
       id: 'ser-4',
       title: "Iluminación Profesional",
       desc: "Diseño e instalación de sistemas LED, iluminación exterior y decorativa.",
-      icon: <Lightbulb className="w-8 h-8" />
+      icon: <Lightbulb className="w-8 h-8" />,
+      img: "/assets/project2.jpg",
+      notes: "Instalación de proyectores LED de alta eficiencia, sistemas de control automatizado (sensores de movimiento y fotoceldas) y diseño lumínico para fachadas y jardines."
     },
     {
       id: 'ser-5',
       title: "Sistemas Industriales",
       desc: "Mantenimiento de motores, tableros de control y maquinaria pesada.",
-      icon: <Settings className="w-8 h-8" />
+      icon: <Settings className="w-8 h-8" />,
+      img: "/assets/project3.jpg",
+      notes: "Cableado de automatización, instalación de variadores de frecuencia (VFD), arrancadores suaves y mantenimiento correctivo a motores eléctricos industriales."
     },
     {
       id: 'ser-6',
       title: "Remodelaciones",
       desc: "Actualización de cableados antiguos a normativas vigentes de seguridad.",
-      icon: <Hammer className="w-8 h-8" />
+      icon: <Hammer className="w-8 h-8" />,
+      img: "/assets/project4.jpg",
+      notes: "Retirada de conductores obsoletos, actualización de cajas de paso, y modernización de tomacorrientes y switches con diseños ergonómicos y seguros."
     }
   ];
+
+  const [activeService, setActiveService] = useState<string | null>(null);
 
   const projects = [
     { id: 'p-1', title: "Sistemas Fotovoltaicos", client: "Energía Solar", img: "/assets/project1.jpg" },
@@ -74,8 +88,8 @@ export default function App() {
   ];
 
   const stats = [
-    { label: "Años de Experiencia", value: "10+" },
-    { label: "Proyectos Realizados", value: "500+" },
+    { label: "Años de Experiencia", value: "5+" },
+    { label: "Proyectos Realizados", value: "300+" },
     { label: "Clientes Satisfechos", value: "99%" },
     { label: "Garantía de Servicio", value: "100%" }
   ];
@@ -232,11 +246,11 @@ export default function App() {
       <section id="services" className="bg-zinc-100 py-24">
         <div className="section-container">
           <div className="text-center mb-16">
-            <h2 className="heading-lg mb-4">Lo que sé hacer <span className="text-brand-yellow italic">muy bien</span></h2>
-            <p className="text-zinc-500 max-w-2xl mx-auto">Ofrezco una amplia gama de servicios técnicos adaptados a tus necesidades específicas.</p>
+            <h2 className="heading-lg mb-4">Servicios <span className="text-brand-yellow italic">Especializados</span></h2>
+            <p className="text-zinc-500 max-w-2xl mx-auto">Haz clic en cada tarjeta para ver detalles técnicos y notas de trabajo para cada especialidad.</p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, idx) => (
               <motion.div 
                 key={service.id}
@@ -244,17 +258,61 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="group bg-white p-10 hover:bg-brand-black transition-all duration-500 relative overflow-hidden"
+                onClick={() => setActiveService(activeService === service.id ? null : service.id)}
+                className={`group relative h-[450px] cursor-pointer overflow-hidden transition-all duration-500 ${activeService === service.id ? 'ring-4 ring-brand-yellow' : ''}`}
               >
-                <div className="absolute top-0 right-0 w-24 h-24 bg-brand-yellow/5 -mr-12 -mt-12 rounded-full group-hover:bg-brand-yellow/10 transition-all" />
-                <div className="text-brand-yellow mb-6 inline-block p-4 bg-brand-black group-hover:bg-brand-yellow group-hover:text-brand-black transition-colors rounded-full">
-                  {service.icon}
+                {/* Background Image */}
+                <img 
+                  src={service.img} 
+                  alt={service.title} 
+                  className="absolute inset-0 w-full h-full object-cover grayscale group-hover:scale-110 transition-transform duration-700"
+                />
+                
+                {/* Dark Overlay */}
+                <div className="absolute inset-0 bg-brand-black/70 group-hover:bg-brand-black/80 transition-colors" />
+
+                {/* Default Content */}
+                <div className={`absolute inset-0 p-10 flex flex-col justify-end transition-all duration-500 ${activeService === service.id ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
+                  <div className="text-brand-yellow mb-6 inline-block">
+                    {service.icon}
+                  </div>
+                  <h3 className="heading-md text-white mb-4">{service.title}</h3>
+                  <p className="text-zinc-400 leading-relaxed text-sm">
+                    {service.desc}
+                  </p>
+                  <div className="mt-6 flex items-center gap-2 text-brand-yellow text-[10px] font-bold uppercase tracking-[0.2em]">
+                    <span>Ver Notas Técnicas</span>
+                    <motion.div
+                      animate={{ x: [0, 5, 0] }}
+                      transition={{ repeat: Infinity, duration: 1.5 }}
+                    >
+                      →
+                    </motion.div>
+                  </div>
                 </div>
-                <h3 className="heading-md mb-4 group-hover:text-white transition-colors">{service.title}</h3>
-                <p className="text-zinc-500 group-hover:text-zinc-400 transition-colors leading-relaxed">
-                  {service.desc}
-                </p>
-                <div className="mt-8 h-1 w-12 bg-brand-yellow group-hover:w-full transition-all duration-500" />
+
+                {/* Technical Notes Content (on Click) */}
+                <motion.div 
+                  initial={false}
+                  animate={{ 
+                    opacity: activeService === service.id ? 1 : 0,
+                    y: activeService === service.id ? 0 : 20
+                  }}
+                  className={`absolute inset-0 p-10 bg-brand-yellow flex flex-col justify-center pointer-events-none ${activeService === service.id ? 'pointer-events-auto' : ''}`}
+                >
+                  <div className="flex justify-between items-start mb-6">
+                    <h3 className="heading-md text-brand-black">{service.title}</h3>
+                    <X size={24} className="text-brand-black cursor-pointer" />
+                  </div>
+                  <div className="h-[2px] w-12 bg-brand-black mb-6" />
+                  <p className="text-brand-black font-medium text-sm leading-relaxed mb-6">
+                    {service.notes}
+                  </p>
+                  <div className="flex items-center gap-2 text-brand-black text-[10px] font-black uppercase tracking-[0.2em] pt-4 border-t border-brand-black/20">
+                    <CheckCircle2 size={14} />
+                    <span>Estándar Profesional</span>
+                  </div>
+                </motion.div>
               </motion.div>
             ))}
           </div>
@@ -375,7 +433,7 @@ export default function App() {
                 </div>
                 <div>
                   <h5 className="font-display font-black uppercase text-xs tracking-widest mb-1">Ubicación</h5>
-                  <p className="text-xl font-bold">Batalla del Ebro 35013</p>
+                  <p className="text-xl font-bold">Calle Batalla del Ebro, CP: 35013</p>
                   <p className="text-xs text-zinc-400 uppercase italic">Cobertura en todo el área metropolitana</p>
                 </div>
               </div>
