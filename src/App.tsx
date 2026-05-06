@@ -353,7 +353,7 @@ export default function App() {
                 </div>
                 <div>
                   <h5 className="font-display font-black uppercase text-xs tracking-widest mb-1">Llámanos o WhatsApp</h5>
-                  <p className="text-xl font-bold">+57 300 000 0000</p>
+                  <p className="text-xl font-bold">643993173</p>
                   <p className="text-xs text-zinc-400 uppercase italic">Atención 24/7 para emergencias</p>
                 </div>
               </div>
@@ -364,7 +364,7 @@ export default function App() {
                 </div>
                 <div>
                   <h5 className="font-display font-black uppercase text-xs tracking-widest mb-1">Email Profesional</h5>
-                  <p className="text-xl font-bold">jim.electricidad@gmail.com</p>
+                  <p className="text-xl font-bold">jjobe077@gmail.com</p>
                   <p className="text-xs text-zinc-400 uppercase italic">Cotizaciones y facturación</p>
                 </div>
               </div>
@@ -375,7 +375,7 @@ export default function App() {
                 </div>
                 <div>
                   <h5 className="font-display font-black uppercase text-xs tracking-widest mb-1">Ubicación</h5>
-                  <p className="text-xl font-bold">Medellín, Colombia</p>
+                  <p className="text-xl font-bold">Batalla del Ebro 35013</p>
                   <p className="text-xs text-zinc-400 uppercase italic">Cobertura en todo el área metropolitana</p>
                 </div>
               </div>
