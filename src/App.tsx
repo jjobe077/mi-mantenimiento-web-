@@ -439,10 +439,21 @@ export default function App() {
               </div>
             </div>
 
-            <div className="mt-12 pt-12 border-t border-zinc-200 flex gap-6">
-              <a href="#" className="p-3 bg-zinc-100 hover:bg-brand-yellow transition-colors rounded-full"><Instagram size={20} /></a>
-              <a href="#" className="p-3 bg-zinc-100 hover:bg-brand-yellow transition-colors rounded-full"><Facebook size={20} /></a>
-              <a href="#" className="p-3 bg-zinc-100 hover:bg-brand-yellow transition-colors rounded-full"><Linkedin size={20} /></a>
+            <div className="mt-12 pt-12 border-t border-zinc-200">
+              <p className="text-[10px] uppercase font-bold tracking-[0.2em] text-zinc-400 mb-6 font-display">Sígueme en Redes</p>
+              <div className="flex flex-wrap gap-4 items-center">
+                <a 
+                  href="https://www.instagram.com/jobish_jr_5" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 p-3 bg-zinc-100 hover:bg-brand-yellow transition-all rounded-full group"
+                >
+                  <Instagram size={20} />
+                  <span className="text-xs font-black uppercase tracking-widest overflow-hidden max-w-0 group-hover:max-w-[150px] transition-all duration-500 whitespace-nowrap">jobish jr 5</span>
+                </a>
+                <a href="#" className="p-3 bg-zinc-100 hover:bg-brand-yellow transition-colors rounded-full"><Facebook size={20} /></a>
+                <a href="#" className="p-3 bg-zinc-100 hover:bg-brand-yellow transition-colors rounded-full"><Linkedin size={20} /></a>
+              </div>
             </div>
           </div>
 
