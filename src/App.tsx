@@ -250,7 +250,7 @@ export default function App() {
             <p className="text-zinc-500 max-w-2xl mx-auto">Haz clic en cada tarjeta para ver detalles técnicos y notas de trabajo para cada especialidad.</p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="flex overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 pb-8 md:pb-0 snap-x snap-mandatory scrollbar-hide">
             {services.map((service, idx) => (
               <motion.div 
                 key={service.id}
@@ -259,7 +259,7 @@ export default function App() {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
                 onClick={() => setActiveService(activeService === service.id ? null : service.id)}
-                className={`group relative h-[450px] cursor-pointer overflow-hidden transition-all duration-500 ${activeService === service.id ? 'ring-4 ring-brand-yellow' : ''}`}
+                className={`group relative h-[450px] min-w-[85vw] md:min-w-0 cursor-pointer overflow-hidden transition-all duration-500 snap-center ${activeService === service.id ? 'ring-4 ring-brand-yellow' : ''}`}
               >
                 {/* Background Image */}
                 <img 
@@ -329,7 +329,7 @@ export default function App() {
           <div className="hidden md:block h-[2px] flex-1 bg-brand-black/10 mx-12 mb-4" />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="flex overflow-x-auto md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 pb-8 md:pb-0 snap-x snap-mandatory scrollbar-hide">
           {projects.map((project, idx) => (
             <motion.div 
               key={project.id}
@@ -337,7 +337,7 @@ export default function App() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="group relative h-[400px] overflow-hidden"
+              className="group relative h-[400px] min-w-[85vw] md:min-w-0 overflow-hidden snap-center"
             >
               <img 
                 src={project.img} 
@@ -443,7 +443,7 @@ export default function App() {
               <p className="text-[10px] uppercase font-bold tracking-[0.2em] text-zinc-400 mb-6 font-display">Sígueme en Redes</p>
               <div className="flex flex-wrap gap-4 items-center">
                 <a 
-                  href="https://www.instagram.com/jobish_jr_5" 
+                  href="https://www.instagram.com/jobishjr5/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 p-3 bg-zinc-100 hover:bg-brand-yellow transition-all rounded-full group"

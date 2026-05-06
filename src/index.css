@@ -40,4 +40,12 @@
   .btn-outline {
     @apply border-2 border-brand-black text-brand-black font-display font-bold px-8 py-4 rounded-none hover:bg-brand-black hover:text-white transition-all duration-300 uppercase tracking-wider text-sm;
   }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
