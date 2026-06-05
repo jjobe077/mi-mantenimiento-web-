@@ -437,6 +437,24 @@ export default function App() {
                   <p className="text-xs text-zinc-400 uppercase italic">Cobertura en todo el área metropolitana</p>
                 </div>
               </div>
+
+              <div className="flex gap-4 items-start">
+                <div className="bg-brand-black p-4 text-brand-yellow">
+                  <Instagram size={24} />
+                </div>
+                <div>
+                  <h5 className="font-display font-black uppercase text-xs tracking-widest mb-1">Instagram</h5>
+                  <a
+                    href="https://www.instagram.com/jobishjr5/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xl font-bold hover:text-brand-yellow transition-colors"
+                  >
+                    jobish jr
+                  </a>
+                  <p className="text-xs text-zinc-400 uppercase italic">Sígueme para ver proyectos y novedades</p>
+                </div>
+              </div>
             </div>
 
             <div className="mt-12 pt-12 border-t border-zinc-200">
@@ -449,7 +467,7 @@ export default function App() {
                   className="flex items-center gap-3 p-3 bg-zinc-100 hover:bg-brand-yellow transition-all rounded-full group"
                 >
                   <Instagram size={20} />
-                  <span className="text-xs font-black uppercase tracking-widest overflow-hidden max-w-0 group-hover:max-w-[150px] transition-all duration-500 whitespace-nowrap">jobish jr 5</span>
+                  <span className="text-xs font-black uppercase tracking-widest overflow-hidden max-w-0 group-hover:max-w-[150px] transition-all duration-500 whitespace-nowrap">jobish jr</span>
                 </a>
                 <a href="#" className="p-3 bg-zinc-100 hover:bg-brand-yellow transition-colors rounded-full"><Facebook size={20} /></a>
                 <a href="#" className="p-3 bg-zinc-100 hover:bg-brand-yellow transition-colors rounded-full"><Linkedin size={20} /></a>
@@ -504,6 +522,17 @@ export default function App() {
           <p className="text-zinc-500 text-xs uppercase tracking-[0.2em] mb-4">Calidad, Seguridad y Confianza en cada proyecto</p>
           <div className="text-zinc-600 text-[10px] font-mono">
             © {new Date().getFullYear()} JIM TÉCNICO ELECTRICISTA. TODOS LOS DERECHOS RESERVADOS.
+          </div>
+          <div className="mt-6 flex justify-center">
+            <a
+              href="https://www.instagram.com/jobishjr5/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-zinc-400 hover:text-brand-yellow transition-colors text-sm"
+            >
+              <Instagram size={18} />
+              <span className="font-display font-bold uppercase tracking-widest">jobish jr</span>
+            </a>
           </div>
           <div className="mt-6 flex justify-center gap-4 text-zinc-500 text-xs">
             <a href="#" className="hover:text-brand-yellow">Términos</a>
