@@ -28,7 +28,7 @@ export default function App() {
       title: "Instalaciones Eléctricas",
       desc: "Instalación completa de circuitos, tableros y sistemas residenciales o comerciales.",
       icon: <Zap className="w-8 h-8" />,
-      img: "/assets/project6.jpg",
+      img: "/assets/project-junction-ceiling.jpg",
       notes: "Especialidad en montajes de cuadros de distribución (QGD), cumplimiento de normativa RETIE, y sistemas de puesta a tierra certificados. Utilizamos conductores de cobre electrolítico y protecciones termo-magnéticas de alta gama."
     },
     {
@@ -60,7 +60,7 @@ export default function App() {
       title: "Sistemas Industriales",
       desc: "Mantenimiento de motores, tableros de control y maquinaria pesada.",
       icon: <Settings className="w-8 h-8" />,
-      img: "/assets/project3.jpg",
+      img: "/assets/project-ceiling-conduits.jpg",
       notes: "Cableado de automatización, instalación de variadores de frecuencia (VFD), arrancadores suaves y mantenimiento correctivo a motores eléctricos industriales."
     },
     {
@@ -68,7 +68,7 @@ export default function App() {
       title: "Remodelaciones",
       desc: "Actualización de cableados antiguos a normativas vigentes de seguridad.",
       icon: <Hammer className="w-8 h-8" />,
-      img: "/assets/project4.jpg",
+      img: "/assets/project-junction-wall.jpg",
       notes: "Retirada de conductores obsoletos, actualización de cajas de paso, y modernización de tomacorrientes y switches con diseños ergonómicos y seguros."
     }
   ];
@@ -76,6 +76,10 @@ export default function App() {
   const [activeService, setActiveService] = useState<string | null>(null);
 
   const projects = [
+    { id: 'p-new-1', title: "Caja de Derivación Empotrada", client: "Instalación Residencial", img: "/assets/project-junction-wall.jpg", isNew: true },
+    { id: 'p-new-2', title: "Derivación en Techo", client: "Reforma Eléctrica", img: "/assets/project-junction-ceiling.jpg", isNew: true },
+    { id: 'p-new-3', title: "Canalización de Techo", client: "Distribución Eléctrica", img: "/assets/project-ceiling-conduits.jpg", isNew: true },
+    { id: 'p-new-4', title: "Cableado de Distribución", client: "Instalación Comercial", img: "/assets/project-ceiling-routing.jpg", isNew: true },
     { id: 'p-1', title: "Sistemas Fotovoltaicos", client: "Energía Solar", img: "/assets/project1.jpg" },
     { id: 'p-2', title: "Instalación de Paneles", client: "Proyectos Renovables", img: "/assets/project2.jpg" },
     { id: 'p-3', title: "Tableros de Control", client: "Mantenimiento Industrial", img: "/assets/project3.jpg" },
@@ -208,8 +212,8 @@ export default function App() {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="relative order-2 md:order-1">
             <img 
-              src="/assets/about-work.jpg" 
-              alt="Jim's Work" 
+              src="/assets/project-junction-wall.jpg" 
+              alt="Instalación eléctrica reciente de Jim" 
               className="w-full grayscale shadow-xl border-4 border-brand-yellow/20"
               referrerPolicy="no-referrer"
             />
@@ -329,8 +333,35 @@ export default function App() {
           <div className="hidden md:block h-[2px] flex-1 bg-brand-black/10 mx-12 mb-4" />
         </div>
 
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mb-12">
+          {projects.filter((p) => p.isNew).slice(0, 2).map((project, idx) => (
+            <motion.div 
+              key={project.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1 }}
+              className="group relative h-[320px] md:h-[480px] overflow-hidden"
+            >
+              <img 
+                src={project.img} 
+                alt={project.title} 
+                className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                referrerPolicy="no-referrer"
+              />
+              <span className="absolute top-4 left-4 bg-brand-yellow text-brand-black text-[10px] font-black uppercase tracking-[0.2em] px-3 py-1 z-10">
+                Nuevo
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/20 to-transparent flex flex-col justify-end p-8">
+                <p className="text-brand-yellow text-xs uppercase tracking-widest font-black mb-2">{project.client}</p>
+                <h4 className="heading-md text-white">{project.title}</h4>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
         <div className="flex overflow-x-auto md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 pb-8 md:pb-0 snap-x snap-mandatory scrollbar-hide">
-          {projects.map((project, idx) => (
+          {projects.filter((p, i) => !p.isNew || i >= 2).map((project, idx) => (
             <motion.div 
               key={project.id}
               initial={{ opacity: 0, scale: 0.95 }}
@@ -345,6 +376,11 @@ export default function App() {
                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
                 referrerPolicy="no-referrer"
               />
+              {project.isNew && (
+                <span className="absolute top-4 left-4 bg-brand-yellow text-brand-black text-[10px] font-black uppercase tracking-[0.2em] px-3 py-1 z-10">
+                  Nuevo
+                </span>
+              )}
               <div className="absolute inset-0 bg-brand-black/80 flex flex-col justify-end p-8 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
                 <p className="text-brand-yellow text-xs uppercase tracking-widest font-black mb-2">{project.client}</p>
                 <h4 className="heading-md text-white mb-4">{project.title}</h4>
